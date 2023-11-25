@@ -30,5 +30,5 @@ if __name__ == "__main__":
     r = requests.get('http://api.nbp.pl/api/cenyzlota')
     if r.status_code == 200:
         data = r.json()
-        temperature = data["forecast"]["temp"]
-        logger.info(f'Weather in Berlin: {temperature}')
+        cena = data[0]["cena"]
+        logger.info(f'Cena złota (PLN): {cena}')
